@@ -47,23 +47,23 @@ app.component('app-footer', {
 app.component('upload-form',{
     name: 'UploadForm',
     template: 
-            `{% extends 'base.html' %}
-
-            {% block main %}
+            `
             <h1 class="page-header">File Upload</h1>
             
-            <form method="post" @submit.prevent="uploadPhoto"}}">
+            <form @submit.prevent="uploadPhoto" id="uploadForm">
             <div class="form-group">
-                {{form.description.label}}
-                {{form.description}}  
+                <label for="description">Description</label>
+                <textarea name="description" class="form-control"></textarea>
             </div>
             <div class="form-group">
-                    {{form.photo.label}}
-                    {{form.photo}}  
+
+                <label for="photo">Photo</label>
+                <input name="photo" class="form-control-file" type="file">
+
             </div>
                 <button type="submit" name="submit" class="btn btn-primary">Upload file</button>
             </form>
-            {% endblock %}`,
+        `,
     methods: 
             fetch("/api/upload", {
                 method: 'POST'

@@ -46,13 +46,12 @@ def upload():
                 "filename": filename,
                 "description": description
             }
-        else:
+            return info
 
-            info = {
+    info_error = {
                 "errors": form_errors((form))
             }
-        return info
-    return render_template('index.html', form)
+    return info_error
         
         
     #     flash('File Saved', 'success')
