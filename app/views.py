@@ -29,7 +29,7 @@ def index(path):
     """
     return render_template('index.html')
 
-@app.routr('/api/upload',  methods=['POST'])
+@app.route('/api/upload',  methods=['POST'])
 def upload():
     form = UploadForm()
 
@@ -51,7 +51,8 @@ def upload():
             info = {
                 "errors": form_errors((form))
             }
-    return info
+        return info
+    return render_template('index.html', form)
         
         
     #     flash('File Saved', 'success')
