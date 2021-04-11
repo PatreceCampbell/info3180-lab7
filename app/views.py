@@ -54,11 +54,6 @@ def upload():
                 "errors": form_errors((form))
             }
         return info_error
-        
-        
-    #     flash('File Saved', 'success')
-    #     return redirect(url_for('home'))
-    # return render_template('upload.html', form=uploadform) 
 
 def get_uploaded_images():
     rootdir = os.getcwd()

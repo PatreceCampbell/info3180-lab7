@@ -22,6 +22,9 @@ app.component('app-header', {
           <li class="nav-item active">
             <router-link class="nav-link" to="/">Home <span class="sr-only">(current)</span></router-link>
           </li>
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/upload">Upload <span class="sr-only">(current)</span></router-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -44,7 +47,7 @@ app.component('app-footer', {
     }
 });
 
-app.component('upload-form',{
+const UploadForm = {
     name: 'UploadForm',
     template: 
             `
@@ -86,7 +89,7 @@ app.component('upload-form',{
             });
         }
     }
-})
+}
 
 const Home = {
     name: 'Home',
@@ -117,6 +120,7 @@ const NotFound = {
 const routes = [
     { path: "/", component: Home },
     // Put other routes here
+    { path: "/upload", component: UploadForm },
 
     // This is a catch all route in case none of the above matches
     { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound }
