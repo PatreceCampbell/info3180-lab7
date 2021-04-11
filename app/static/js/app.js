@@ -52,15 +52,14 @@ app.component('upload-form',{
             {% block main %}
             <h1 class="page-header">File Upload</h1>
             
-            <form method="post" enctype="multipart/form-data" action="{{ url_for('upload') @submit.prevent="uploadPhoto"}}">
-            {{form.csrf_token}}
+            <form method="post" @submit.prevent="uploadPhoto"}}">
             <div class="form-group">
                 {{form.description.label}}
-                {{form.description(class="form-control")}}  
+                {{form.description}}  
             </div>
             <div class="form-group">
                     {{form.photo.label}}
-                    {{form.photo(class="form-control")}}  
+                    {{form.photo}}  
             </div>
                 <button type="submit" name="submit" class="btn btn-primary">Upload file</button>
             </form>

@@ -35,8 +35,8 @@ def upload():
 
     if request.method == "POST":
         if form.validate_on_submit():
-            description = form.name.data    
-            photo = form.email.data    
+            description = form.description.data    
+            photo = form.photo.data    
             
             filename = secure_filename(photo.filename)
             photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
