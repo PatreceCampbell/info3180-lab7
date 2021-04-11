@@ -51,19 +51,21 @@ const UploadForm = {
     name: 'UploadForm',
     template: 
             `
-            <h1 class="page-header">File Upload</h1>
-            
-            <form @submit.prevent="uploadPhoto" id="uploadForm">
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea name="description" class="form-control"></textarea>
+            <div class="card" style="padding:10px;">
+                <h1 class="page-header">File Upload</h1>
+                
+                <form @submit.prevent="uploadPhoto" id="uploadForm">
+                <div class="form-group">
+                    <label for="description">Description</label> <span> (Required) </span>
+                    <textarea name="description" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Photo</label> <span> (Required) </span>
+                    <input name="photo" class="form-control-file" type="file">
+                </div>
+                    <button type="submit" name="submit" class="btn btn-primary">Upload file</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="photo">Photo</label>
-                <input name="photo" class="form-control-file" type="file">
-            </div>
-                <button type="submit" name="submit" class="btn btn-primary">Upload file</button>
-            </form>
         `,
     methods: {
         uploadPhoto(){

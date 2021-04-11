@@ -1,3 +1,18 @@
 body {
     padding-top: 5rem;
 }
+
+label{
+    font-weight: bolder;
+}
+
+.card{
+    box-shadow: 5px 5px 2px rgb(173, 171, 171);
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+span{
+    color: rgb(252, 94, 94);
+    font-weight: bolder;
+}
