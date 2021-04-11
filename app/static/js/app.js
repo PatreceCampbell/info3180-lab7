@@ -56,17 +56,23 @@ app.component('upload-form',{
                 <textarea name="description" class="form-control"></textarea>
             </div>
             <div class="form-group">
-
                 <label for="photo">Photo</label>
                 <input name="photo" class="form-control-file" type="file">
-
             </div>
                 <button type="submit" name="submit" class="btn btn-primary">Upload file</button>
             </form>
         `,
-    methods: 
+    methods: {
+        uploadPhoto(){
+            let uploadForm = document.getElementById('uploadForm');
+            let form_data = new FormData(uploadForm);
             fetch("/api/upload", {
-                method: 'POST'
+                method: 'POST',
+                body: form_data,
+                headers: {
+                    'X-CSRFToken': token
+                },
+                    credentials: 'same-origin'
             })
             .then(function (response) {
                 return response.json();
@@ -77,7 +83,9 @@ app.component('upload-form',{
             })
             .catch(function (error) {
                 console.log(error);
-            })
+            });
+        }
+    }
 })
 
 const Home = {

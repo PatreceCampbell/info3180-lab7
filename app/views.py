@@ -8,6 +8,8 @@ This file creates your application.
 from app import app
 from flask import render_template, request
 from .forms import UploadForm
+from werkzeug.utils import secure_filename
+import os
 
 ###
 # Routing for your application.
@@ -48,10 +50,10 @@ def upload():
             }
             return info
 
-    info_error = {
+        info_error = {
                 "errors": form_errors((form))
             }
-    return info_error
+        return info_error
         
         
     #     flash('File Saved', 'success')
